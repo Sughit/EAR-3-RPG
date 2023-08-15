@@ -10,6 +10,7 @@ public class dialogManagerNPC : MonoBehaviour
     public questManager questMan;
     public GameObject quest;
     public int index;
+    public bool questAccepted;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -75,6 +76,7 @@ public class dialogManagerNPC : MonoBehaviour
             //     Debug.Log("Quest already selected");
             // }
             questMan.AddQuest(quest);
+            questAccepted = true;
             index = 0;
         }
         if(index != linesArray.Length)
