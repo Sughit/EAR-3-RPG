@@ -9,11 +9,13 @@ public class movement : MonoBehaviour
     public float speed;
     float horizontal;
     float vertical;
+    Animator anim;
 
     private Vector3 pointerInput;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,6 +33,15 @@ public class movement : MonoBehaviour
     {
         Vector2 moveDirection = new Vector2(horizontal, vertical).normalized;
         rb.velocity = moveDirection * speed *Time.fixedDeltaTime;
+
+        if(horizontal!=0 || vertical!=0)
+        {
+            anim.SetBool("isRunning", true);
+        } 
+        else   
+        {
+            anim.SetBool("isRunning", false);
+        }
     }
 
     public void RotateToPointer(Vector3 lookDirection)

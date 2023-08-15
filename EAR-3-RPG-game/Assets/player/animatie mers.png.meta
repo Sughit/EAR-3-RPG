@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 209f1de3c0caf584394379ff34bff820
+guid: f0edcdb8b714bd7408e77aa4d6e67a44
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,12 +129,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animatie idle 1_0
+      name: animatie mers_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 76
+        width: 60
         height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf7280766dd00049ae796904f47a84d
-      internalID: -1325356906
+      spriteID: ea03b6f022274514b8442a5c04600823
+      internalID: 765432291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animatie idle 1_1
+      name: animatie mers_1
       rect:
         serializedVersion: 2
-        x: 94
+        x: 63
         y: 0
-        width: 76
+        width: 60
         height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac6bddab607b6d4fbb86e1e9a414bf2
-      internalID: -837674558
+      spriteID: 6567b665a02c18048ab4df411f9a61c0
+      internalID: -1927935987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animatie idle 1_2
+      name: animatie mers_2
       rect:
         serializedVersion: 2
-        x: 190
+        x: 125
         y: 0
-        width: 76
+        width: 60
         height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,8 +185,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f58d22cbf2fec0419878218e503b5e9
-      internalID: -2109088562
+      spriteID: d9834b553dfe413418170904012eed19
+      internalID: 185088599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animatie mers_3
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 60
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82345ecccaf08c64586cbe70171d1e52
+      internalID: 773333868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animatie mers_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 60
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfa1550d8b5a96459f7dde3a4f2b096
+      internalID: 1193711635
       vertices: []
       indices: 
       edges: []
@@ -202,9 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animatie idle 1_0: -1325356906
-      animatie idle 1_1: -837674558
-      animatie idle 1_2: -2109088562
+      animatie mers_0: 765432291
+      animatie mers_1: -1927935987
+      animatie mers_2: 185088599
+      animatie mers_3: 773333868
+      animatie mers_4: 1193711635
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
