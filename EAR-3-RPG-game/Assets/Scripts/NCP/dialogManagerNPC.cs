@@ -65,14 +65,16 @@ public class dialogManagerNPC : MonoBehaviour
         if(index == linesArray.Length)
         {
             linesArray[index - 1].SetActive(false);
-            if(quest.activeSelf == false)
-            {
-                questMan.AddQuest(quest);
-            }
-            else
-            {
-                Debug.Log("Quest already selected");
-            }
+            // if(quest.activeSelf == false)
+            // {
+            //     questMan.AddQuest(quest);
+            //     //isInRange = false;
+            // }
+            // else
+            // {
+            //     Debug.Log("Quest already selected");
+            // }
+            questMan.AddQuest(quest);
             index = 0;
         }
         if(index != linesArray.Length)

@@ -5,13 +5,15 @@ using UnityEngine;
 public class questManager : MonoBehaviour
 {
     public List<GameObject> questArray = new List<GameObject>();
+    public Transform questWindow;
 
     public void AddQuest(GameObject newQuest)
     {
         questArray.Add(newQuest);
-        foreach (var quest in questArray)
-        {
-            quest.SetActive(true);
-        }
+        Instantiate(newQuest, questWindow);
+        // foreach (var quest in questArray)
+        // {
+        //     quest.SetActive(true);
+        // }
     } 
 }
