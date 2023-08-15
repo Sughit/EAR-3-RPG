@@ -9,6 +9,7 @@ public class collectQuest : MonoBehaviour
     public static int numMax = 3;
     public Text textCollected;
     public dialogManagerNPC quest;
+    public static bool questCompleted;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,11 +17,24 @@ public class collectQuest : MonoBehaviour
         {
             if(quest.questAccepted)
             {
-                textCollected = GameObject.Find("Canvas/questWindow/questUINPC1(Clone)/text").GetComponent<Text>();
+                
                 numCollected++;
                 textCollected.text = $"Collected {numCollected} out of {numMax}";
                 Destroy(gameObject);
             }
+        }
+    }
+
+    void Update()
+    {
+        if(quest.questAccepted)
+        {
+            textCollected = GameObject.Find("Canvas/questWindow/questUINPC1(Clone)/text").GetComponent<Text>();
+        }
+        if(numCollected == numMax)
+        {
+            textCollected.text = "Quest Completed";
+            questCompleted = true;
         }
     }
 }

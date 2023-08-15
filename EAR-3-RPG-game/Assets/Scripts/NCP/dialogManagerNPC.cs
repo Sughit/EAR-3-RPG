@@ -7,6 +7,7 @@ public class dialogManagerNPC : MonoBehaviour
     public GameObject inRangeText;
     public bool isInRange;
     public GameObject[] linesArray;
+    public GameObject[] linesEndArray;
     public questManager questMan;
     public GameObject quest;
     public int index;
@@ -34,7 +35,20 @@ public class dialogManagerNPC : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(isInRange)
+            if(isInRange && collectQuest.questCompleted)
+            {
+                if(inRangeText.activeSelf)
+                {
+                    inRangeText.SetActive(false);
+                    NextEndLine();
+                }
+                else
+                {
+                    NextEndLine();
+                }
+            }
+
+            if(isInRange && questAccepted == false)
             {
                 if(inRangeText.activeSelf)
                 {
@@ -45,6 +59,10 @@ public class dialogManagerNPC : MonoBehaviour
                 {
                     NextLine();
                 }
+            }
+            else
+            {
+                Debug.Log("Complete the quest first");
             }
         }
         if(isInRange == false)
@@ -57,6 +75,15 @@ public class dialogManagerNPC : MonoBehaviour
             {
                 linesArray[index].SetActive(false);
             }
+
+            if(index == linesEndArray.Length)
+            {
+                linesEndArray[index - 1].SetActive(false);
+            }
+            else
+            {
+                linesEndArray[index].SetActive(false);
+            }
             index = 0;
         }
     }
@@ -66,15 +93,6 @@ public class dialogManagerNPC : MonoBehaviour
         if(index == linesArray.Length)
         {
             linesArray[index - 1].SetActive(false);
-            // if(quest.activeSelf == false)
-            // {
-            //     questMan.AddQuest(quest);
-            //     //isInRange = false;
-            // }
-            // else
-            // {
-            //     Debug.Log("Quest already selected");
-            // }
             questMan.AddQuest(quest);
             questAccepted = true;
             index = 0;
@@ -87,14 +105,25 @@ public class dialogManagerNPC : MonoBehaviour
             }
             linesArray[index].SetActive(true);
             index++;
-            // if(index < linesArray.Length)
-            // {
-            //     index++;
-            // }
-            // else
-            // {
-            //     index = 0;
-            // }
+        }
+    }
+
+    void NextEndLine()
+    {
+        if(index == linesEndArray.Length)
+        {
+            linesEndArray[index - 1].SetActive(false);
+            questMan.RemoveQuest(quest);
+            index = 0;
+        }
+        if(index != linesEndArray.Length)
+        {
+            if(index != 0)
+            {
+                linesEndArray[index - 1].SetActive(false);
+            }
+            linesEndArray[index].SetActive(true);
+            index++;
         }
     }
 }
