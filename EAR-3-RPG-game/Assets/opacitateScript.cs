@@ -9,18 +9,18 @@ public class opacitateScript : MonoBehaviour
      public Color ImageColor;
      private bool up = false;
  
-     void Start () {
+     void Awake () {
         Background.gameObject.SetActive(true);
          ImageColor = Background.color;
          StartCoroutine(ModifyOpacity());
      }
  
      IEnumerator ModifyOpacity() {
-        ImageColor.a=1; //Full Opaque
-        for(int i = 0; i < 100; i++){
+        ImageColor.a=1; 
+        for(int i = 0; i < 50; i++){
                 ImageColor.a -= 0.02f;
                 Background.color=ImageColor;
-                yield return new WaitForSeconds(0.01f); //Wait
+                yield return new WaitForSeconds(0.01f); 
                 
         }
         Background.gameObject.SetActive(false);

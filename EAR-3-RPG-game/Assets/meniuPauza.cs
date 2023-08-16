@@ -16,7 +16,7 @@ public class meniuPauza : MonoBehaviour
     void Start()
     {
         meniuDeschis=false;
-        
+        StartCoroutine(ModifyOpacity());
         ImageColor = Background.color;
         
     }
@@ -36,7 +36,7 @@ public class meniuPauza : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                         StartCoroutine(ModifyOpacity());;
+                         StartCoroutine(ModifyOpacity());
                 Time.timeScale=1f;
                 meniuDeschis=false;
             }
@@ -72,6 +72,7 @@ public class meniuPauza : MonoBehaviour
 
      public void MainMenu()
     {
+        Time.timeScale=1f;
         SceneManager.LoadScene("MeniuPricipal");
     }
 }
