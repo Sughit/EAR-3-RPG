@@ -17,10 +17,10 @@ public class questManager : MonoBehaviour
         // }
     } 
 
-    public void RemoveQuest(GameObject newQuest)
+    public void RemoveQuest(GameObject newQuest, string newQuestLoc)
     {
         questArray.Remove(newQuest);
-        newQuest.SetActive(false);
+        GameObject.Find(newQuestLoc).SetActive(false);
         
     }
 }

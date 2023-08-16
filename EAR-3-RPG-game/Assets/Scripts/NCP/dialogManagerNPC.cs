@@ -10,8 +10,11 @@ public class dialogManagerNPC : MonoBehaviour
     public GameObject[] linesEndArray;
     public questManager questMan;
     public GameObject quest;
+    public string questLoc;
     public int index;
+    public int indexEnd;
     public bool questAccepted;
+    private bool canCycle;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +22,7 @@ public class dialogManagerNPC : MonoBehaviour
         {
             inRangeText.SetActive(true);
             isInRange = true;
+            canCycle = true;
         }
     }
 
@@ -28,6 +32,7 @@ public class dialogManagerNPC : MonoBehaviour
         {
             inRangeText.SetActive(false);
             isInRange = false;
+            canCycle = false;
         }
     }
 
@@ -37,12 +42,16 @@ public class dialogManagerNPC : MonoBehaviour
         {
             if(isInRange && collectQuest.questCompleted)
             {
-                if(inRangeText.activeSelf)
+                if(indexEnd == linesEndArray.Length)
+                {
+                    canCycle = false;
+                }
+                if(inRangeText.activeSelf && canCycle)
                 {
                     inRangeText.SetActive(false);
                     NextEndLine();
                 }
-                else
+                else if(canCycle)
                 {
                     NextEndLine();
                 }
@@ -50,12 +59,16 @@ public class dialogManagerNPC : MonoBehaviour
 
             if(isInRange && questAccepted == false)
             {
-                if(inRangeText.activeSelf)
+                if(index == linesArray.Length)
+                {
+                    canCycle = false;
+                }
+                if(inRangeText.activeSelf && canCycle)
                 {
                     inRangeText.SetActive(false);
                     NextLine();
                 }
-                else
+                else if(canCycle)
                 {
                     NextLine();
                 }
@@ -65,36 +78,42 @@ public class dialogManagerNPC : MonoBehaviour
                 Debug.Log("Complete the quest first");
             }
         }
+
         if(isInRange == false)
         {
             if(index == linesArray.Length)
             {
                 linesArray[index - 1].SetActive(false);
+                canCycle = false;
             }
             else
             {
                 linesArray[index].SetActive(false);
             }
 
-            if(index == linesEndArray.Length)
+            if(indexEnd == linesEndArray.Length)
             {
-                linesEndArray[index - 1].SetActive(false);
+                linesEndArray[indexEnd - 1].SetActive(false);
             }
             else
             {
-                linesEndArray[index].SetActive(false);
+                linesEndArray[indexEnd].SetActive(false);
             }
             index = 0;
+            indexEnd = 0;
         }
     }
 
     void NextLine()
     {
+        if(index == linesArray.Length - 1)
+        {
+            questMan.AddQuest(quest);
+            questAccepted = true;
+        }
         if(index == linesArray.Length)
         {
             linesArray[index - 1].SetActive(false);
-            questMan.AddQuest(quest);
-            questAccepted = true;
             index = 0;
         }
         if(index != linesArray.Length)
@@ -110,20 +129,23 @@ public class dialogManagerNPC : MonoBehaviour
 
     void NextEndLine()
     {
-        if(index == linesEndArray.Length)
+        if(indexEnd == linesEndArray.Length - 1)
         {
-            linesEndArray[index - 1].SetActive(false);
-            questMan.RemoveQuest(quest);
-            index = 0;
+            questMan.RemoveQuest(quest, questLoc);
         }
-        if(index != linesEndArray.Length)
+        if(indexEnd == linesEndArray.Length)
         {
-            if(index != 0)
+            linesEndArray[indexEnd - 1].SetActive(false);
+            indexEnd = 0;
+        }
+        if(indexEnd != linesEndArray.Length)
+        {
+            if(indexEnd != 0)
             {
-                linesEndArray[index - 1].SetActive(false);
+                linesEndArray[indexEnd - 1].SetActive(false);
             }
-            linesEndArray[index].SetActive(true);
-            index++;
+            linesEndArray[indexEnd].SetActive(true);
+            indexEnd++;
         }
     }
 }
