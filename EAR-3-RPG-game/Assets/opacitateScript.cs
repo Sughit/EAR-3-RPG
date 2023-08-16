@@ -10,6 +10,7 @@ public class opacitateScript : MonoBehaviour
      private bool up = false;
  
      void Start () {
+        Background.gameObject.SetActive(true);
          ImageColor = Background.color;
          StartCoroutine(ModifyOpacity());
      }
@@ -20,6 +21,9 @@ public class opacitateScript : MonoBehaviour
                 ImageColor.a -= 0.02f;
                 Background.color=ImageColor;
                 yield return new WaitForSeconds(0.01f); //Wait
+                
         }
+        Background.gameObject.SetActive(false);
+                Background.color=ImageColor;
      }
 }
