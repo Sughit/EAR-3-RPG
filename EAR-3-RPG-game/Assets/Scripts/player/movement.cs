@@ -47,14 +47,29 @@ public class movement : MonoBehaviour
     public void RotateToPointer(Vector3 lookDirection)
     {
         Vector3 scale = transform.localScale;
-        if (lookDirection.x > 0)
+        if(horizontal!=0 || vertical!=0)
+        {
+        if (horizontal > 0)
+        {
+            scale.x = 1;
+        }
+        else if (horizontal < 0)
+        {
+            scale.x = -1;
+        }
+        }else
+        {
+           if (lookDirection.x > 0)
         {
             scale.x = 1;
         }
         else if (lookDirection.x < 0)
         {
             scale.x = -1;
+        } 
         }
+        
         transform.localScale = scale;
+        
     }
 }
