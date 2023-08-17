@@ -10,6 +10,7 @@ public class movement : MonoBehaviour
     float horizontal;
     float vertical;
     Animator anim;
+    bool ok;
 
     private Vector3 pointerInput;
 
@@ -33,15 +34,47 @@ public class movement : MonoBehaviour
     {
         Vector2 moveDirection = new Vector2(horizontal, vertical).normalized;
         rb.velocity = moveDirection * speed *Time.fixedDeltaTime;
-
-        if(horizontal!=0 || vertical!=0)
+    if(horizontal!=0 && vertical!=0)
+    {
+                anim.SetBool("isRunningLR", true);
+                ok=true;
+    }else
+    {
+        ok=false;
+    }
+        if(horizontal!=0 && ok==false)
         {
-            anim.SetBool("isRunning", true);
+            anim.SetBool("isRunningLR", true);
+            ok=true;
         } 
         else   
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("isRunningLR", false);
+            ok=false;
         }
+        if(vertical==1 && ok==false)
+        {
+            anim.SetBool("isRunningUP", true);
+            ok=true;
+        } 
+        else   
+        {
+            anim.SetBool("isRunningUP", false);
+            ok=false;
+        }
+        if(vertical==-1 && ok==false)
+        {
+            anim.SetBool("isRunningDN", true);
+            ok=true;
+        } 
+        else   
+        {
+            anim.SetBool("isRunningDN", false);
+            ok=false;
+        }
+    
+        
+
     }
 
     public void RotateToPointer(Vector3 lookDirection)
