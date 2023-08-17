@@ -11,7 +11,9 @@ public class repairQuest : MonoBehaviour
     public Text repairText;
     private bool isInRange;
     public dialogManagerNPC quest;
-    public bool questCompleted;
+    public dialogManagerNPC finish;
+
+    private bool canRepair = true;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,12 +40,17 @@ public class repairQuest : MonoBehaviour
             {
                 if(quest.questAccepted)
                 {
-                    if(colRepairQuest.numCollected > 0)
+                    if(colRepairQuest.numCollected > 0 && canRepair)
                     {
+                        canRepair = false;
                         numOfRepairs++;
                         repairText.text = $"{numOfRepairs} repaired";
                         colRepairQuest.numCollected--;
                         colliderText.SetActive(false);
+                    }
+                    else
+                    {
+                        Debug.Log("you don't have wood or you repaired this already");
                     }
                 }
             }
@@ -51,7 +58,7 @@ public class repairQuest : MonoBehaviour
 
         if(numOfRepairs == numMax)
         {
-            questCompleted = true;
+            finish.questCompleted = true;
             repairText.text = "Quest Completed";
         }
     }

@@ -8,7 +8,7 @@ public class colRepairQuest : MonoBehaviour
     public static int numCollected;
     public Text collectedText;
     public dialogManagerNPC quest;
-    public repairQuest questCom;
+    //public repairQuest questCom;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,7 +31,7 @@ public class colRepairQuest : MonoBehaviour
             collectedText.text = $"{numCollected} of wood collected";
         }
 
-        if(questCom.questCompleted)
+        if(quest.questCompleted)
         {
             collectedText.gameObject.SetActive(false);
         }

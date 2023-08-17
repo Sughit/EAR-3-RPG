@@ -15,6 +15,7 @@ public class dialogManagerNPC : MonoBehaviour
     public int indexEnd;
     public bool questAccepted;
     private bool canCycle;
+    public bool questCompleted;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,7 +41,8 @@ public class dialogManagerNPC : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(isInRange && collectQuest.questCompleted)
+            //liniile finala pentru NPC
+            if(isInRange && questCompleted)
             {
                 if(indexEnd == linesEndArray.Length)
                 {
@@ -57,6 +59,7 @@ public class dialogManagerNPC : MonoBehaviour
                 }
             }
 
+            //liniile pentru acceptare quest
             if(isInRange && questAccepted == false)
             {
                 if(index == linesArray.Length)
