@@ -15,6 +15,14 @@ public class repairQuest : MonoBehaviour
 
     private bool canRepair = true;
 
+    private SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         colliderText.SetActive(true);
@@ -43,6 +51,7 @@ public class repairQuest : MonoBehaviour
                     if(colRepairQuest.numCollected > 0 && canRepair)
                     {
                         canRepair = false;
+                        spriteRenderer.sprite = newSprite;
                         numOfRepairs++;
                         repairText.text = $"{numOfRepairs} repaired";
                         colRepairQuest.numCollected--;
