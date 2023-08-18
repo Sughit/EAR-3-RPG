@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class meniuPrincipal : MonoBehaviour
 {
-    // Start is called before the first frame update
         public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
         Time.timeScale=1f;
+        colRepairQuest.numCollected=0;
+        collectQuest.numCollected=0;
+        repairQuest.numOfRepairs=0;
 
     }
 

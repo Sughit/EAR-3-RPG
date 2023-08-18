@@ -53,6 +53,10 @@ public class meniuPauza : MonoBehaviour
      public void restart()
     {
         Time.timeScale=1f;
+        colRepairQuest.numCollected=0;
+        collectQuest.numCollected=0;
+        repairQuest.numOfRepairs=0;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     IEnumerator ModifyOpacity() {
