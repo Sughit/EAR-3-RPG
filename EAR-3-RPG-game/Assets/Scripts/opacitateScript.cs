@@ -7,7 +7,6 @@ public class opacitateScript : MonoBehaviour
 {
     public Image Background;
      public Color ImageColor;
-     private bool up = false;
  
      void Awake () {
         Background.gameObject.SetActive(true);

@@ -11,7 +11,6 @@ public class meniuPauza : MonoBehaviour
      bool meniuDeschis;
      public Image Background;
      public Color ImageColor;
-     private bool up = false;
     
     void Start()
     {
