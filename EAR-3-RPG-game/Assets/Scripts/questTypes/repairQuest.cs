@@ -25,7 +25,7 @@ public class repairQuest : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(canRepair)
+        if(canRepair && quest.questAccepted)
         {
             colliderText.SetActive(true);
             isInRange = true;
