@@ -14,7 +14,7 @@ public class opacitateScript : MonoBehaviour
          StartCoroutine(ModifyOpacity());
      }
  
-     public IEnumerator ModifyOpacity() {
+     IEnumerator ModifyOpacity() {
         ImageColor.a=1; 
         for(int i = 0; i < 50; i++){
                 ImageColor.a -= 0.02f;
