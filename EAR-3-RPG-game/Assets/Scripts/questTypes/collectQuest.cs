@@ -9,7 +9,6 @@ public class collectQuest : MonoBehaviour
     public static int numMax = 3;
     public Text textCollected;
     public dialogManagerNPC quest;
-    public dialogManagerNPC finish;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,7 +33,7 @@ public class collectQuest : MonoBehaviour
         if(numCollected == numMax)
         {
             textCollected.text = "Quest Completed";
-            finish.questCompleted = true;
+            quest.questCompleted = true;
         }
     }
 }
