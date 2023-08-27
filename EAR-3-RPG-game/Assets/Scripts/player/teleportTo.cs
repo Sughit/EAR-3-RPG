@@ -52,17 +52,16 @@ public class teleportTo : MonoBehaviour
     }
 
     IEnumerator ModifyOpacity() {
-
         tranzitieGO.gameObject.SetActive(true);
-                player.transform.position = new Vector3(x,y,z);
+        player.transform.position = new Vector3(x,y,z);
         yield return new WaitForSeconds(1f);
         for(int i = 0; i < 50; i++){
                 ImageColor.a -= 0.02f;
                 tranzitieGO.color=ImageColor;
                 yield return new WaitForSeconds(0.01f);
             }
-                    ImageColor.a=1;
-            tranzitieGO.gameObject.SetActive(false);
-                tranzitieGO.color=ImageColor;
+        ImageColor.a=1;
+        tranzitieGO.gameObject.SetActive(false);
+        tranzitieGO.color=ImageColor;
     }
 }
