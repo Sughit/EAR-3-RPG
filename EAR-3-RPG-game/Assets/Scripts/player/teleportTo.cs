@@ -5,6 +5,9 @@ using UnityEngine;
 public class teleportTo : MonoBehaviour
 {
     public GameObject colliderText;
+    //public meniuPauza tranzitie;
+    public Animator tranzitie;
+    public GameObject tranzitieGO;
     [SerializeField]
     private bool isInRange;
 
@@ -36,8 +39,20 @@ public class teleportTo : MonoBehaviour
         {
             if(isInRange)
             {
-                player.transform.position = new Vector3(x,y,z);
+                tranzitieGO.SetActive(true);
+                //StartCoroutine(tranzitie.ModifyOpacity());
+                StartCoroutine(Teleportare());
             }
         }
+    }
+
+    IEnumerator Teleportare()
+    {
+        tranzitie.SetBool("tranzitie", true);
+        
+        player.transform.position = new Vector3(x,y,z);
+        yield return new WaitForSeconds(0.5f);
+        tranzitie.SetBool("tranzitie", false);
+        tranzitieGO.SetActive(false);
     }
 }

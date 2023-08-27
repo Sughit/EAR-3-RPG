@@ -59,7 +59,7 @@ public class meniuPauza : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    IEnumerator ModifyOpacity() {
+    public IEnumerator ModifyOpacity() {
         ImageColor.a=1; //Full Opaque
                 meniuPauzaObj.SetActive(false);
         for(int i = 0; i < 50; i++){
