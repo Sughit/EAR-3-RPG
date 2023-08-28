@@ -39,6 +39,17 @@ public class dialogManagerNPC : MonoBehaviour
 
     void Update()
     {
+        if(!isInRange)
+        {
+            foreach(var linie in linesArray)
+            {
+                linie.SetActive(false);
+            }
+            foreach(var linie in linesEndArray)
+            {
+                linie.SetActive(false);
+            }
+        }
         if(Input.GetKeyDown(KeyCode.E))
         {
             //liniile finala pentru NPC
