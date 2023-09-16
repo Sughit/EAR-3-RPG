@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class efectScris : MonoBehaviour {
 
 	public float delay = 0.065f;
+	[TextArea]
 	public string fullText;
 	private string currentText = "";
 
@@ -20,4 +22,6 @@ public class efectScris : MonoBehaviour {
 			yield return new WaitForSeconds(delay);
 		}
 	}
+
+	
 }

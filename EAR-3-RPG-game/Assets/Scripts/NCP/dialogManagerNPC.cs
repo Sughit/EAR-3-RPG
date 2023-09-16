@@ -78,20 +78,23 @@ public class dialogManagerNPC : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             //liniile finala pentru NPC
-            if(isInRange && questCompleted)
+            if(!canSecondDialog)
             {
-                if(indexEnd == linesEndArray.Length)
+                if(isInRange && questCompleted)
                 {
-                    canCycle = false;
-                }
-                if(inRangeText.activeSelf && canCycle)
-                {
-                    inRangeText.SetActive(false);
-                    NextEndLine();
-                }
-                else if(canCycle)
-                {
-                    NextEndLine();
+                    if(indexEnd == linesEndArray.Length)
+                    {
+                        canCycle = false;
+                    }
+                    if(inRangeText.activeSelf && canCycle)
+                    {
+                        inRangeText.SetActive(false);
+                        NextEndLine();
+                    }
+                    else if(canCycle)
+                    {
+                        NextEndLine();
+                    }
                 }
             }
 
@@ -302,8 +305,8 @@ public class dialogManagerNPC : MonoBehaviour
     {
         if(indexEnd == linesEndArray.Length - 1)
         {
-            //incepe a doua conversatie
-            canSecondDialog = true;
+            // //incepe a doua conversatie
+            // canSecondDialog = true;
             questMan.RemoveQuest(quest, questLoc);
         }
         if(indexEnd == linesEndArray.Length)

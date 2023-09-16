@@ -12,6 +12,7 @@ public class repairQuest : MonoBehaviour
     private bool isInRange;
     public dialogManagerNPC quest;
     public dialogManagerNPC finish;
+    public giveNextLines newLinesToOliver;
 
     private bool canRepair = true;
 
@@ -70,6 +71,7 @@ public class repairQuest : MonoBehaviour
 
         if(numOfRepairs == numMax)
         {
+            newLinesToOliver.GiveNextLines();
             finish.questCompleted = true;
             repairText.text = "Quest Completed";
         }
