@@ -19,7 +19,7 @@ public class deliveryQuest : MonoBehaviour
         if(finish.deliveryCompleted)
         {
             quest.questCompleted = true;
-            deliveryText.text = "Go and talk to the suspicious man";
+            deliveryText.text = "Go and talk to Oliver";
         }
     }
 }

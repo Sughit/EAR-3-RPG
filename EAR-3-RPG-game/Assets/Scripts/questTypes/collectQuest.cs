@@ -32,7 +32,7 @@ public class collectQuest : MonoBehaviour
         }
         if(numCollected == numMax)
         {
-            textCollected.text = "Quest Completed";
+            textCollected.text = "Go and talk to Anna";
             quest.questCompleted = true;
         }
     }

@@ -255,11 +255,10 @@ public class dialogManagerNPC : MonoBehaviour
     {
         //pt a adauga quest in acest stadiu scoate din comentariu
 
-        // if(index2 == lines2Array.Length - 1)
-        // {
-        //     questMan.AddQuest(quest);
-        //     questAccepted = true;
-        // }
+        if(index2 == lines2Array.Length - 1)
+        {
+            questMan.RemoveQuest(quest, questLoc);
+        }
         if(index2 == lines2Array.Length)
         {
             lines2Array[index2 - 1].SetActive(false);

@@ -44,7 +44,10 @@ public class repairQuest : MonoBehaviour
         if(quest.questAccepted)
         {
             repairText = GameObject.Find("Canvas/questWindow/questUINPC2(Clone)/text").GetComponent<Text>();
-            repairText.text = $"{numOfRepairs} repaired";
+            if(numOfRepairs!=4)
+            {
+                repairText.text = $"{numOfRepairs} repaired";
+            }
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -57,7 +60,10 @@ public class repairQuest : MonoBehaviour
                         canRepair = false;
                         spriteRenderer.sprite = newSprite;
                         numOfRepairs++;
-                        repairText.text = $"{numOfRepairs} repaired";
+                        if(numOfRepairs != 4)
+                        {
+                            repairText.text = $"{numOfRepairs} repaired";
+                        }
                         colRepairQuest.numCollected--;
                         colliderText.SetActive(false);
                     }
@@ -73,7 +79,7 @@ public class repairQuest : MonoBehaviour
         {
             newLinesToOliver.GiveNextLines();
             finish.questCompleted = true;
-            repairText.text = "Quest Completed";
+            repairText.text = "Go and talk to Alfred";
         }
     }
 }
