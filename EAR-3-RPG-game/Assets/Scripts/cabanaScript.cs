@@ -12,9 +12,11 @@ public class cabanaScript : MonoBehaviour
     public GameObject textCollider;
     public Image tranzitieGO;
     public Color ImageColor;
+    AudioSource audio;
 
     void Start()
     {
+        audio= GetComponent<AudioSource>();
         ImageColor = tranzitieGO.color;
     }
 
@@ -44,6 +46,7 @@ public class cabanaScript : MonoBehaviour
             {
                 if(cheieScript.isKey)
                 {
+                    audio.Play();
                     tranzitieGO.gameObject.SetActive(true);
                     StartCoroutine(ModifyOpacity());
                     textCollider.SetActive(false);

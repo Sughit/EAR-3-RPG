@@ -11,6 +11,7 @@ public class movement : MonoBehaviour
     float vertical;
     Animator anim;
     bool ok;
+    public GameObject sunetMiscare;
 
     private Vector3 pointerInput;
 
@@ -71,6 +72,14 @@ public class movement : MonoBehaviour
         {
             anim.SetBool("isRunningDN", false);
             ok=false;
+        }
+        if(horizontal!=0 || vertical!=0)
+        {
+            sunetMiscare.SetActive(true);
+        }
+        else
+        {
+            sunetMiscare.SetActive(false);
         }
     
         

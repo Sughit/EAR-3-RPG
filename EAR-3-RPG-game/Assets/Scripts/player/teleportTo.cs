@@ -15,9 +15,11 @@ public class teleportTo : MonoBehaviour
     public float x,y,z;
 
     public GameObject player;
+    AudioSource audio;
 
     void Start()
     {
+        audio= GetComponent<AudioSource>();
         ImageColor = tranzitieGO.color;
     }
 
@@ -45,6 +47,7 @@ public class teleportTo : MonoBehaviour
         {
             if(isInRange)
             {
+                audio.Play();
                         tranzitieGO.gameObject.SetActive(true);
                 StartCoroutine(ModifyOpacity());
             }
