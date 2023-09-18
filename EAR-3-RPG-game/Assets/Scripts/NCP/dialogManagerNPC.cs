@@ -45,6 +45,7 @@ public class dialogManagerNPC : MonoBehaviour
             inRangeText.SetActive(false);
             isInRange = false;
             canCycle = false;
+
         }
     }
 
