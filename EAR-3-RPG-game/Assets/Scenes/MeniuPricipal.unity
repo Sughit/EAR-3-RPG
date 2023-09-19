@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 79569685}
   - component: {fileID: 79569684}
   - component: {fileID: 79569683}
+  - component: {fileID: 79569686}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -324,6 +325,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 79569686}
+        m_TargetAssemblyTypeName: sunetButon, Assembly-CSharp
+        m_MethodName: Apasare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1978037992}
         m_TargetAssemblyTypeName: meniuPrincipal, Assembly-CSharp
         m_MethodName: ExitGame
@@ -374,6 +387,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79569681}
   m_CullTransparentMesh: 1
+--- !u!114 &79569686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79569681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1161da2539da4834a93e9950329edf05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunetButonP: {fileID: 572386482815335095, guid: 086bae97fe1528b4ba2f837d9e8a6f41, type: 3}
 --- !u!1 &126720049
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +803,7 @@ GameObject:
   - component: {fileID: 364697853}
   - component: {fileID: 364697852}
   - component: {fileID: 364697851}
+  - component: {fileID: 364697855}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -849,6 +876,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 364697855}
+        m_TargetAssemblyTypeName: sunetButon, Assembly-CSharp
+        m_MethodName: Apasare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1978037992}
         m_TargetAssemblyTypeName: meniuPrincipal, Assembly-CSharp
         m_MethodName: BackMeniuSetari
@@ -899,6 +938,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364697849}
   m_CullTransparentMesh: 1
+--- !u!114 &364697855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364697849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1161da2539da4834a93e9950329edf05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunetButonP: {fileID: 572386482815335095, guid: 086bae97fe1528b4ba2f837d9e8a6f41, type: 3}
 --- !u!1 &453363470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1436,7 @@ GameObject:
   - component: {fileID: 805892544}
   - component: {fileID: 805892543}
   - component: {fileID: 805892542}
+  - component: {fileID: 805892545}
   m_Layer: 5
   m_Name: settings
   m_TagString: Untagged
@@ -1456,6 +1509,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 805892545}
+        m_TargetAssemblyTypeName: sunetButon, Assembly-CSharp
+        m_MethodName: Apasare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1978037992}
         m_TargetAssemblyTypeName: meniuPrincipal, Assembly-CSharp
         m_MethodName: MeniuSetari
@@ -1506,6 +1571,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805892540}
   m_CullTransparentMesh: 1
+--- !u!114 &805892545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805892540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1161da2539da4834a93e9950329edf05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunetButonP: {fileID: 572386482815335095, guid: 086bae97fe1528b4ba2f837d9e8a6f41, type: 3}
 --- !u!1 &1097056949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1954,7 @@ GameObject:
   - component: {fileID: 1903089303}
   - component: {fileID: 1903089302}
   - component: {fileID: 1903089301}
+  - component: {fileID: 1903089306}
   m_Layer: 5
   m_Name: play
   m_TagString: Untagged
@@ -1948,6 +2027,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1903089306}
+        m_TargetAssemblyTypeName: sunetButon, Assembly-CSharp
+        m_MethodName: Apasare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1978037992}
         m_TargetAssemblyTypeName: meniuPrincipal, Assembly-CSharp
         m_MethodName: PlayGame
@@ -1998,6 +2089,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903089299}
   m_CullTransparentMesh: 1
+--- !u!114 &1903089306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903089299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1161da2539da4834a93e9950329edf05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunetButonP: {fileID: 572386482815335095, guid: 086bae97fe1528b4ba2f837d9e8a6f41, type: 3}
 --- !u!1 &1919470910
 GameObject:
   m_ObjectHideFlags: 0
