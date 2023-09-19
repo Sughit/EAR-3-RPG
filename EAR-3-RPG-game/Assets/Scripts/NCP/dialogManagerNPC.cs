@@ -79,7 +79,7 @@ public class dialogManagerNPC : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             //liniile finala pentru NPC
-            if(!canSecondDialog)
+            if(!canSecondDialog && !canThirdDialog)
             {
                 if(isInRange && questCompleted)
                 {
