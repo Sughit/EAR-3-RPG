@@ -8,6 +8,7 @@ public class findQuest : MonoBehaviour
     public static bool axeCollected;
     public Text textCollected;
     public dialogManagerNPC quest;
+    public giveNextLines newLinesToAlfred;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,6 +32,7 @@ public class findQuest : MonoBehaviour
         if(axeCollected)
         {
             quest.questCompleted = true;
+            newLinesToAlfred.GiveNextLines();
         }
     }
 }
