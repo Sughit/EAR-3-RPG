@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class meniuPrincipal : MonoBehaviour
 {
+        public GameObject principalMeniu;
+        public GameObject meniuSetari; 
         public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
@@ -17,5 +19,16 @@ public class meniuPrincipal : MonoBehaviour
     public void ExitGame() 
     { 
         Application.Quit(); 
+    }
+
+    public void MeniuSetari()
+    {
+        principalMeniu.SetActive(false);
+        meniuSetari.SetActive(true);
+    }
+    public void BackMeniuSetari()
+    {
+        meniuSetari.SetActive(false);
+        principalMeniu.SetActive(true);
     }
 }
