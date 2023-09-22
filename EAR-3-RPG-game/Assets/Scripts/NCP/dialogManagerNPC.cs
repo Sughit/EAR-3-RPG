@@ -27,6 +27,7 @@ public class dialogManagerNPC : MonoBehaviour
     public bool canFirstDialog = true;
     public bool canSecondDialog;
     public bool canThirdDialog;
+    public GameObject mainQuest;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -231,10 +232,21 @@ public class dialogManagerNPC : MonoBehaviour
 
     void NextLine()
     {
+        //adauga main quest
+        if(index==7)
+        {
+            if(mainQuest!=null)
+            {
+                questMan.AddQuest(mainQuest);
+            }
+        }
         if(index == linesArray.Length - 1)
         {
-            questMan.AddQuest(quest);
-            questAccepted = true;
+            if(quest!=null)
+            {
+                questMan.AddQuest(quest);
+                questAccepted = true;
+            }
         }
         if(index == linesArray.Length)
         {
@@ -262,7 +274,10 @@ public class dialogManagerNPC : MonoBehaviour
         // }
         if(index2==1)
         {
-            questMan.RemoveQuest(quest, questLoc);
+            if(quest!=null)
+            {
+                questMan.RemoveQuest(quest, questLoc);
+            }
         }
         if(index2 == lines2Array.Length)
         {
@@ -311,7 +326,10 @@ public class dialogManagerNPC : MonoBehaviour
         {
             // //incepe a doua conversatie
             // canSecondDialog = true;
-            questMan.RemoveQuest(quest, questLoc);
+            if(quest!=null)
+            {
+                questMan.RemoveQuest(quest, questLoc);
+            }
         }
         if(indexEnd == linesEndArray.Length)
         {
