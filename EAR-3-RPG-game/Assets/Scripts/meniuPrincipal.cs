@@ -6,6 +6,7 @@ public class meniuPrincipal : MonoBehaviour
 {
         public GameObject principalMeniu;
         public GameObject meniuSetari; 
+        public GameObject meniuTutorial;
         public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
@@ -29,6 +30,16 @@ public class meniuPrincipal : MonoBehaviour
     public void BackMeniuSetari()
     {
         meniuSetari.SetActive(false);
+        principalMeniu.SetActive(true);
+    }
+    public void MeniuTutorial()
+    {
+        principalMeniu.SetActive(false);
+        meniuTutorial.SetActive(true);
+    }
+    public void BackMeniuTutorial()
+    {
+        meniuTutorial.SetActive(false);
         principalMeniu.SetActive(true);
     }
 }
