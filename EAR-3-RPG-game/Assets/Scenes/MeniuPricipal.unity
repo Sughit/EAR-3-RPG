@@ -779,7 +779,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1548925516}
+      - m_Target: {fileID: 1978037994}
         m_TargetAssemblyTypeName: mixajManele, Assembly-CSharp
         m_MethodName: SetMusicVolumeMuzica
         m_Mode: 1
@@ -1708,7 +1708,6 @@ GameObject:
   - component: {fileID: 1548925513}
   - component: {fileID: 1548925515}
   - component: {fileID: 1548925514}
-  - component: {fileID: 1548925516}
   m_Layer: 5
   m_Name: meniuSetari
   m_TagString: Untagged
@@ -1775,21 +1774,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548925512}
   m_CullTransparentMesh: 1
---- !u!114 &1548925516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548925512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11078118e1aa4524cb846b90e2a08cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzica: {fileID: 24100000, guid: b9b6373dd6965dd4dae145b98f15c591, type: 2}
-  sliderMuzica: {fileID: 351500305}
-  sliderSFX: {fileID: 2040321569}
 --- !u!1 &1549850074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2180,7 @@ GameObject:
   - component: {fileID: 1978037988}
   - component: {fileID: 1978037992}
   - component: {fileID: 1978037993}
+  - component: {fileID: 1978037994}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2397,6 +2382,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1978037994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978037987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11078118e1aa4524cb846b90e2a08cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzica: {fileID: 24100000, guid: b9b6373dd6965dd4dae145b98f15c591, type: 2}
+  sliderMuzica: {fileID: 351500305}
+  sliderSFX: {fileID: 2040321569}
 --- !u!1 &1981796594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1548925516}
+      - m_Target: {fileID: 1978037994}
         m_TargetAssemblyTypeName: mixajManele, Assembly-CSharp
         m_MethodName: SetMusicVolumeSFX
         m_Mode: 1

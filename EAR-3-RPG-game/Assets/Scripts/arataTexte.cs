@@ -29,6 +29,7 @@ public class arataTexte : MonoBehaviour
         textCollider.SetActive(false);
         lockedText.SetActive(false);
         ePressed=false;
+        disableWhenE=false;
     }
 
     void Update()
@@ -44,13 +45,17 @@ public class arataTexte : MonoBehaviour
             {
                 lockedText.SetActive(false);
                 Debug.Log("ar trebui sa se inchida");
+                textCollider.SetActive(true);
+                disableWhenE=false;
+                StartCoroutine(apasareE());
             }
 
-            if(isRange && lockedText.activeSelf==false)
+            if(isRange && !ePressed && Input.GetKeyDown(KeyCode.E))
             {
                 
                 textCollider.SetActive(false);
                 lockedText.SetActive(true);
+                disableWhenE=true;
             }
         }
         if(lockedText.activeSelf==true)
@@ -68,5 +73,11 @@ public class arataTexte : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator apasareE()
+    {
+        yield return new WaitForSeconds(0.1f);
+        ePressed=false;
     }
 }
