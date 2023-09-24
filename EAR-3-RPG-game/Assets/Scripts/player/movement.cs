@@ -7,6 +7,8 @@ public class movement : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
+    [HideInInspector]
+    public bool canMove=true;
     float horizontal;
     float vertical;
     Animator anim;
@@ -35,60 +37,62 @@ public class movement : MonoBehaviour
     {
         Vector2 moveDirection = new Vector2(horizontal, vertical).normalized;
         rb.velocity = moveDirection * speed *Time.fixedDeltaTime;
-    if(horizontal!=0 && vertical!=0)
-    {
+        if(canMove)
+        {
+            if(horizontal!=0 && vertical!=0)
+            {
                 anim.SetBool("isRunningLR", true);
                 ok=true;
-    }else
-    {
-        ok=false;
-    }
-        if(horizontal!=0 && ok==false)
-        {
-            anim.SetBool("isRunningLR", true);
-            ok=true;
-        } 
-        else   
-        {
-            anim.SetBool("isRunningLR", false);
-            ok=false;
+            }else
+            {
+                ok=false;
+            }
+            if(horizontal!=0 && ok==false)
+            {
+                anim.SetBool("isRunningLR", true);
+                ok=true;
+            } 
+            else   
+            {
+                anim.SetBool("isRunningLR", false);
+                ok=false;
+            }
+            if(vertical==1 && ok==false)
+            {
+                anim.SetBool("isRunningUP", true);
+                ok=true;
+            } 
+            else   
+            {
+                anim.SetBool("isRunningUP", false);
+                ok=false;
+            }
+            if(vertical==-1 && ok==false)
+            {
+                anim.SetBool("isRunningDN", true);
+                ok=true;
+            } 
+            else   
+            {
+                anim.SetBool("isRunningDN", false);
+                ok=false;
+            }
+            if(horizontal!=0 || vertical!=0)
+            {
+                sunetMiscare.SetActive(true);
+            }
+            else
+            {
+                sunetMiscare.SetActive(false);
+            }
         }
-        if(vertical==1 && ok==false)
-        {
-            anim.SetBool("isRunningUP", true);
-            ok=true;
-        } 
-        else   
-        {
-            anim.SetBool("isRunningUP", false);
-            ok=false;
-        }
-        if(vertical==-1 && ok==false)
-        {
-            anim.SetBool("isRunningDN", true);
-            ok=true;
-        } 
-        else   
-        {
-            anim.SetBool("isRunningDN", false);
-            ok=false;
-        }
-        if(horizontal!=0 || vertical!=0)
-        {
-            sunetMiscare.SetActive(true);
-        }
-        else
-        {
-            sunetMiscare.SetActive(false);
-        }
-    
-        
-
     }
 
     public void RotateToPointer(Vector3 lookDirection)
     {
-        Vector3 scale = transform.localScale;
+        if(canMove)
+        {
+            Vector3 scale = transform.localScale;
         if(horizontal!=0 || vertical!=0)
         {
         if (horizontal > 0)
@@ -112,6 +116,6 @@ public class movement : MonoBehaviour
         }
         
         transform.localScale = scale;
-        
+        }   
     }
 }

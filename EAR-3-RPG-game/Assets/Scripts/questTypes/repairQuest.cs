@@ -28,7 +28,10 @@ public class repairQuest : MonoBehaviour
     {
         if(canRepair && quest.questAccepted)
         {
-            colliderText.SetActive(true);
+            if(colRepairQuest.numCollected>0)
+            {
+                colliderText.SetActive(true);
+            }
             isInRange = true;
         }
     }

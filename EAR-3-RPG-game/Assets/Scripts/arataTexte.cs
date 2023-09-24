@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class arataTexte : MonoBehaviour
 {
-    bool isRange;
+    [HideInInspector]
+    public bool isRange;
+    
     public GameObject textCollider;
     public GameObject lockedText;
     public float timeToSetFalse;
     float currentTimeToSetFalse;
     public bool timer;
     public bool disableWhenE;
+    //[HideInInspector]
     public bool ePressed;
+    [HideInInspector]
+    public bool oliver;
 
     void Start()
     {
@@ -44,7 +49,6 @@ public class arataTexte : MonoBehaviour
             if(disableWhenE)
             {
                 lockedText.SetActive(false);
-                Debug.Log("ar trebui sa se inchida");
                 textCollider.SetActive(true);
                 disableWhenE=false;
                 StartCoroutine(apasareE());
@@ -79,5 +83,6 @@ public class arataTexte : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         ePressed=false;
+        oliver=true;
     }
 }
