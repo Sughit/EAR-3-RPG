@@ -6,9 +6,12 @@ public class questManager : MonoBehaviour
 {
     public List<GameObject> questArray = new List<GameObject>();
     public Transform questWindow;
+    AudioSource audio;
 
     public void AddQuest(GameObject newQuest)
     {
+        audio= GetComponent<AudioSource>();
+        audio.Play();
         questArray.Add(newQuest);
         Instantiate(newQuest, questWindow);
         // foreach (var quest in questArray)

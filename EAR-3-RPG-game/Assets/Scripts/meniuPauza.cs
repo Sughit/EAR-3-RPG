@@ -17,6 +17,7 @@ public class meniuPauza : MonoBehaviour
         meniuDeschis=false;
         StartCoroutine(ModifyOpacity());
         ImageColor = Background.color;
+        Cursor.visible=false;
         
     }
     void Update()
@@ -29,6 +30,7 @@ public class meniuPauza : MonoBehaviour
             meniuPauzaObj.SetActive(true);
             imagine.SetActive(true);
             meniuDeschis=true;
+            Cursor.visible=true;
         }
         }
         else if(meniuDeschis)
@@ -38,9 +40,9 @@ public class meniuPauza : MonoBehaviour
                          StartCoroutine(ModifyOpacity());
                 Time.timeScale=1f;
                 meniuDeschis=false;
+                Cursor.visible=false;
             }
         }
-        
     }
 
     public void resume()
@@ -48,6 +50,7 @@ public class meniuPauza : MonoBehaviour
                  StartCoroutine(ModifyOpacity());
         Time.timeScale=1f;
         meniuDeschis=false;
+        Cursor.visible=false;
     }
 
      public void restart()

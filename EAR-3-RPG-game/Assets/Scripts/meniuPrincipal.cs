@@ -7,6 +7,7 @@ public class meniuPrincipal : MonoBehaviour
         public GameObject principalMeniu;
         public GameObject meniuSetari; 
         public GameObject meniuTutorial;
+        public GameObject meniuCredits;
         public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
@@ -14,6 +15,7 @@ public class meniuPrincipal : MonoBehaviour
         colRepairQuest.numCollected=0;
         collectQuest.numCollected=0;
         repairQuest.numOfRepairs=0;
+        Cursor.visible=false;
 
     }
 
@@ -41,5 +43,32 @@ public class meniuPrincipal : MonoBehaviour
     {
         meniuTutorial.SetActive(false);
         principalMeniu.SetActive(true);
+    }
+    public void MeniuCredits()
+    {
+        principalMeniu.SetActive(false);
+        meniuCredits.SetActive(true);
+    }
+    public void BackMeniuCredits()
+    {
+        meniuCredits.SetActive(false);
+        principalMeniu.SetActive(true);
+    }
+
+    public void TwitterA()
+    {
+        Application.OpenURL("https://twitter.com/SughitGames");
+    }
+    public void TwitterE()
+    {
+        Application.OpenURL("https://twitter.com/LasP_X");
+    }
+    public void SoundImage()
+    {
+        Application.OpenURL("https://soundimage.org/");
+    }
+    public void Email()
+    {
+        Application.OpenURL("mailto:ear3.ro@gmail.com");
     }
 }

@@ -48,7 +48,7 @@ public class teleportTo : MonoBehaviour
             if(isInRange)
             {
                 audio.Play();
-                        tranzitieGO.gameObject.SetActive(true);
+                tranzitieGO.gameObject.SetActive(true);
                 StartCoroutine(ModifyOpacity());
             }
         }

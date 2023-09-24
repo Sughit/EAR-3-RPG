@@ -9,6 +9,7 @@ public class cheieScript : MonoBehaviour
     public GameObject cheie;
     public GameObject textCollider;
     bool isRange;
+    AudioSource Audio;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,6 +39,8 @@ public class cheieScript : MonoBehaviour
                 {
                     textCollider.SetActive(false);
                     isKey=true;
+                    Audio= GetComponent<AudioSource>();
+                    Audio.Play();
                     cheie.SetActive(false);
                 }
                 else
