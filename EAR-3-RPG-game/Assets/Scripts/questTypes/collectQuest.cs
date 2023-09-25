@@ -9,6 +9,7 @@ public class collectQuest : MonoBehaviour
     public static int numMax = 3;
     public Text textCollected;
     public dialogManagerNPC quest;
+    public GameObject sonor;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +20,7 @@ public class collectQuest : MonoBehaviour
                 
                 numCollected++;
                 textCollected.text = $"Collected {numCollected} out of {numMax}";
+                Instantiate(sonor, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

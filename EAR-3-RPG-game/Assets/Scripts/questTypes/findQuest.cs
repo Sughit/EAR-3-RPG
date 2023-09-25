@@ -9,6 +9,7 @@ public class findQuest : MonoBehaviour
     public Text textCollected;
     public dialogManagerNPC quest;
     public giveNextLines newLinesToAlfred;
+    public GameObject sonor;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +19,7 @@ public class findQuest : MonoBehaviour
             {
                 axeCollected=true;
                 textCollected.text = "Go and talk to Jack";
+                Instantiate(sonor, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

@@ -9,6 +9,7 @@ public class colRepairQuest : MonoBehaviour
     public Text collectedText;
     public dialogManagerNPC quest;
     //public repairQuest questCom;
+    public GameObject sonor;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +19,8 @@ public class colRepairQuest : MonoBehaviour
             {
                 numCollected++;
                 collectedText.text = $"{numCollected} of wood collected";
+                Instantiate(sonor, transform.position, Quaternion.identity);
+                sonor.GetComponent<AudioSource>().Play();
                 Destroy(gameObject);
             }
         }

@@ -18,6 +18,7 @@ public class repairQuest : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     public Sprite newSprite;
+    public GameObject sonor;
 
     void Start()
     {
@@ -63,6 +64,7 @@ public class repairQuest : MonoBehaviour
                         canRepair = false;
                         spriteRenderer.sprite = newSprite;
                         numOfRepairs++;
+                        Instantiate(sonor, transform.position, Quaternion.identity);
                         if(numOfRepairs != 4)
                         {
                             repairText.text = $"{numOfRepairs} repaired";
