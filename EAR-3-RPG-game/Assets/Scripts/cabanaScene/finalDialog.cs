@@ -10,6 +10,7 @@ public class finalDialog : MonoBehaviour
     bool canShowFirstLine=true;
     public int index;
     public GameObject meniuMort;
+    public GameObject meniuMort2;
     public Image Background;
      public Color ImageColor;
     public GameObject imagine;
@@ -36,7 +37,6 @@ public class finalDialog : MonoBehaviour
         if(index == linesArray.Length-1)
         {
             linesArray[index - 1].SetActive(false);
-            imagine.SetActive(true);
             StartCoroutine(ModifyOpacity());
             StartCoroutine(ModifyOpacityInapoi());
         }
@@ -52,16 +52,18 @@ public class finalDialog : MonoBehaviour
     }
 
     public IEnumerator ModifyOpacity() {
+        imagine.SetActive(true);
         ImageColor.a=0; //Full Opaque
         for(int i = 0; i < 50; i++){
                 ImageColor.a += 0.02f;
                 Background.color=ImageColor;
                 yield return new WaitForSeconds(0.01f); //Wait
         }
-
         ImageColor.a=1f;
-                Background.color=ImageColor;
+        Background.color=ImageColor;
      }
+
+
 
      public IEnumerator ModifyOpacityInapoi() {
         yield return new WaitForSeconds(3f);
@@ -72,9 +74,47 @@ public class finalDialog : MonoBehaviour
                 Background.color=ImageColor;
                 yield return new WaitForSeconds(0.01f); //Wait
         }
-
         ImageColor.a=0f;
-                Background.color=ImageColor;
-                            
+        Background.color=ImageColor;
+        yield return new WaitForSeconds(2f);
+            StartCoroutine(ModifyOpacity2());
      }
-}
+     public IEnumerator ModifyOpacity2() {
+        imagine.SetActive(true);
+        ImageColor.a=0; //Full Opaque
+        for(int i = 0; i < 100; i++){
+                ImageColor.a += 0.01f;
+                Background.color=ImageColor;
+                yield return new WaitForSeconds(0.01f); //Wait
+        }
+        ImageColor.a=1f;
+        Background.color=ImageColor;
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(ModifyOpacityInapoi2());
+     }
+     public IEnumerator ModifyOpacityInapoi2() {
+        meniuMort.SetActive(false);
+                        meniuMort2.SetActive(true);
+        ImageColor.a=1; //Full Opaque
+        for(int i = 0; i < 100; i++){
+                ImageColor.a -= 0.01f;
+                Background.color=ImageColor;
+                yield return new WaitForSeconds(0.01f); //Wait
+         }
+        ImageColor.a=0f;
+        Background.color=ImageColor;
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(ModifyOpacity3());
+    }
+     public IEnumerator ModifyOpacity3() {
+        imagine.SetActive(true);
+        ImageColor.a=0; //Full Opaque
+        for(int i = 0; i < 100; i++){
+                ImageColor.a += 0.01f;
+                Background.color=ImageColor;
+                yield return new WaitForSeconds(0.01f); //Wait
+        }
+        ImageColor.a=1f;
+        Background.color=ImageColor;
+     }
+}      
