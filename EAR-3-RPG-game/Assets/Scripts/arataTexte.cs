@@ -17,6 +17,7 @@ public class arataTexte : MonoBehaviour
     public bool ePressed;
     [HideInInspector]
     public bool oliver;
+    public GameObject sonor;
 
     void Start()
     {
@@ -53,10 +54,9 @@ public class arataTexte : MonoBehaviour
                 disableWhenE=false;
                 StartCoroutine(apasareE());
             }
-
             if(isRange && !ePressed && Input.GetKeyDown(KeyCode.E))
             {
-                
+                                        Instantiate(sonor, transform.position, Quaternion.identity);
                 textCollider.SetActive(false);
                 lockedText.SetActive(true);
                 disableWhenE=true;

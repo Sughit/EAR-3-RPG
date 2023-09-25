@@ -10,6 +10,7 @@ public class deliveryFinish : MonoBehaviour
     private bool isInRange;
     private bool canInteract = true;
     public bool deliveryCompleted;
+    public GameObject sonor;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,6 +37,7 @@ public class deliveryFinish : MonoBehaviour
             deliveryCompleted = true;
             canInteract =false;
             colliderText.SetActive(false);
+            Instantiate(sonor, transform.position, Quaternion.identity);
         }
     }
 }

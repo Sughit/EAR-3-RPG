@@ -20,7 +20,6 @@ public class colRepairQuest : MonoBehaviour
                 numCollected++;
                 collectedText.text = $"{numCollected} of wood collected";
                 Instantiate(sonor, transform.position, Quaternion.identity);
-                sonor.GetComponent<AudioSource>().Play();
                 Destroy(gameObject);
             }
         }

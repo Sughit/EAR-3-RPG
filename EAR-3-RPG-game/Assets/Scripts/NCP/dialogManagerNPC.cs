@@ -28,6 +28,7 @@ public class dialogManagerNPC : MonoBehaviour
     public bool canSecondDialog;
     public bool canThirdDialog;
     public GameObject mainQuest;
+    public GameObject sonor;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -262,6 +263,7 @@ public class dialogManagerNPC : MonoBehaviour
             linesArray[index].SetActive(true);
             index++;
         }
+        Instantiate(sonor, transform.position, Quaternion.identity);
     }
 
     void NextLine2()
@@ -293,6 +295,7 @@ public class dialogManagerNPC : MonoBehaviour
             lines2Array[index2].SetActive(true);
             index2++;
         }
+        Instantiate(sonor, transform.position, Quaternion.identity);
     }
 
     void NextLine3()
@@ -318,6 +321,7 @@ public class dialogManagerNPC : MonoBehaviour
             lines3Array[index3].SetActive(true);
             index3++;
         }
+        Instantiate(sonor, transform.position, Quaternion.identity);
     }
 
     void NextEndLine()
@@ -345,5 +349,6 @@ public class dialogManagerNPC : MonoBehaviour
             linesEndArray[indexEnd].SetActive(true);
             indexEnd++;
         }
+        Instantiate(sonor, transform.position, Quaternion.identity);
     }
 }
