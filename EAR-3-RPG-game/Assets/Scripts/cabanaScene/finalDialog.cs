@@ -17,6 +17,7 @@ public class finalDialog : MonoBehaviour
     public Image Background;
      public Color ImageColor;
     public GameObject imagine;
+    public  static bool end=false;
 
     void Update()
     {
@@ -40,6 +41,7 @@ public class finalDialog : MonoBehaviour
         if(index == linesArray.Length-1)
         {
             linesArray[index - 1].SetActive(false);
+                        end=true;
             StartCoroutine(ModifyOpacity());
             StartCoroutine(ModifyOpacityInapoi());
         }
