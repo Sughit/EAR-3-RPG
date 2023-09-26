@@ -56,7 +56,10 @@ public class arataTexte : MonoBehaviour
             }
             if(isRange && !ePressed && Input.GetKeyDown(KeyCode.E))
             {
-                                        Instantiate(sonor, transform.position, Quaternion.identity);
+                if(sonor!=null)
+                {
+                    Instantiate(sonor, transform.position, Quaternion.identity);
+                }
                 textCollider.SetActive(false);
                 lockedText.SetActive(true);
                 disableWhenE=true;
